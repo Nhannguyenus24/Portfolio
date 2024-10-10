@@ -1,9 +1,10 @@
-"use client";
+"use client"; // Đánh dấu component này là Client Component
 import Link from "next/link";
 import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import Image from "next/image";
 
 const navLinks = [
   {
@@ -23,15 +24,25 @@ const navLinks = [
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
+  const scrollToSection = (id) => {
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Hiệu ứng cuộn mượt mà
+    });
+  };
+
   return (
     <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-        <Link
-          href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
-        >
-          LOGO
-        </Link>
+  
+          <Image src="/favicon.ico" width="40" height="40" alt="Logo" onClick={scrollToTop}/>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
@@ -53,7 +64,16 @@ const Navbar = () => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
               <li key={index}>
-                <NavLink href={link.path} title={link.title} />
+                <a
+                  href={link.path} // Vẫn giữ href để SEO
+                  onClick={(e) => {
+                    e.preventDefault(); // Ngăn chặn hành vi mặc định
+                    scrollToSection(link.path); // Cuộn đến phần tương ứng
+                  }}
+                  className="text-white"
+                >
+                  {link.title}
+                </a>
               </li>
             ))}
           </ul>

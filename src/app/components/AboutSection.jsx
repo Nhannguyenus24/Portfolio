@@ -9,12 +9,12 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
+        <li>NodeJs</li>
         <li>Express</li>
         <li>PostgreSQL</li>
-        <li>Sequelize</li>
+        <li>NextJs</li>
         <li>JavaScript</li>
-        <li>React</li>
+        <li>ReactJs</li>
       </ul>
     ),
   },
@@ -23,8 +23,9 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Bachelor's Degree in Software Engineering, VNUHCM - University of Science</li>
+        <li>FullStack web development in Udemy</li>
+        <li>Cloud computing and devop on Coursera</li>
       </ul>
     ),
   },
@@ -33,8 +34,9 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>Google IT Support</li>
+        <li>Google Data Analytic</li>
+        <li>Google UX Designs</li>
       </ul>
     ),
   },
