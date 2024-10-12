@@ -1,28 +1,31 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import fs from "fs/promises";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
-
-export async function POST(req, res) {
+export async function POST(req) {
   const { email, subject, message } = await req.json();
   console.log(email, subject, message);
+
   try {
-    const data = await resend.emails.send({
-      from: fromEmail,
-      to: [fromEmail, email],
-      subject: subject,
-      react: (
-        <>
-          <h1>{subject}</h1>
-          <p>Thank you for contacting us!</p>
-          <p>New message submitted:</p>
-          <p>{message}</p>
-        </>
-      ),
-    });
-    return NextResponse.json(data);
+    let contacts = [];
+    try {
+      const data = await fs.readFile('contact.json', 'utf8');
+      contacts = JSON.parse(data);
+    } catch (err) {
+      if (err.code !== 'ENOENT') {
+        console.error('Error reading file', err);
+        return NextResponse.json({ error: "Failed to read contact file." }, { status: 500 });
+      }
+    }
+
+    contacts.push({ email, subject, message });
+    const jsonData = JSON.stringify(contacts, null, 2);
+    await fs.writeFile('contact.json', jsonData);
+    console.log('Data successfully added to contact.json');
+
+    return NextResponse.json({ message: "Data successfully added and email sent!" });
+
   } catch (error) {
-    return NextResponse.json({ error });
+    console.error("Error processing request: ", error);
+    return NextResponse.json({ error: "Failed to process request." }, { status: 500 });
   }
 }

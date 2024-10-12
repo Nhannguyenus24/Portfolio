@@ -7,59 +7,44 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
+    title: "Event Website",
+    description: "MERN Stack Project with RESTFUL API",
+    image: "/images/projects/Event-website.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Nhannguyenus24/Event-Website"
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
+    title: "Portfolio Website",
+    description: "NextJs Project",
+    image: "/images/projects/Portfolio.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Nhannguyenus24/Portfolio"
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
-    image: "/images/projects/3.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "Proxy Server",
+    description: "Simple Python Proxy between Browser and Server",
+    image: "/images/projects/Proxy.png",
+    tag: ["All", "Window app"],
+    gitUrl: "https://github.com/Nhannguyenus24/Website-proxy"
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "SVG Drawer",
+    description: "SVG Reader file and Drawing Window app",
+    image: "/images/projects/SVG.jpg",
+    tag: ["All", "Window app"],
+    gitUrl: "https://github.com/Nhannguyenus24/SVG-Reader"
   },
   {
     id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-];
+    title: "Pikachu Onet Game",
+    description: "Simple onet Window app ",
+    image: "/images/projects/Pikachu.png",
+    tag: ["All", "Window app"],
+    gitUrl: "https://github.com/Nhannguyenus24/HCMUS-Onet-Game-Project"
+  }];
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
@@ -100,6 +85,11 @@ const ProjectsSection = () => {
           name="Mobile"
           isSelected={tag === "Mobile"}
         />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Window app"
+          isSelected={tag === "Window app"}
+        />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
@@ -116,7 +106,6 @@ const ProjectsSection = () => {
               description={project.description}
               imgUrl={project.image}
               gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
             />
           </motion.li>
         ))}
