@@ -19,31 +19,26 @@ Welcome to my portfolio! This project showcases various projects I have worked o
 - **Description**: MERN Stack Project with RESTFUL API
 - **Tags**: All, Web
 - **GitHub**: [Event Website](https://github.com/Nhannguyenus24/Event-Website)
-- **Image**: ![Event Website](public/images/projects/Event-website.png)
 
 ### Portfolio Website
 - **Description**: NextJs Project
 - **Tags**: All, Web
 - **GitHub**: [Portfolio Website](https://github.com/Nhannguyenus24/Portfolio)
-- **Image**: ![Portfolio Website](public/images/projects/Portfolio.png)
 
 ### Proxy Server
 - **Description**: Simple Python Proxy between Browser and Server
 - **Tags**: All, Window app
 - **GitHub**: [Proxy Server](https://github.com/Nhannguyenus24/Website-proxy)
-- **Image**: ![Proxy Server](public/images/projects/Proxy.png)
 
 ### SVG Drawer
 - **Description**: SVG Reader file and Drawing Window app
 - **Tags**: All, Window app
 - **GitHub**: [SVG Drawer](https://github.com/Nhannguyenus24/SVG-Reader)
-- **Image**: ![SVG Drawer](public/images/projects/SVG.jpg)
 
 ### Pikachu Onet Game
 - **Description**: Simple onet Window app
 - **Tags**: All, Window app
 - **GitHub**: [Pikachu Onet Game](https://github.com/Nhannguyenus24/HCMUS-Onet-Game-Project)
-- **Image**: ![Pikachu Onet Game](public/images/projects/Pikachu.png)
 
 ## Contact
 If you have any questions or would like to get in touch, please feel free to contact me.
@@ -76,11 +71,10 @@ If you would like to contribute to this project, please follow these steps:
 ## Technologies Used
 - **Frontend**: React, Next.js, Tailwind CSS
 - **Backend**: Node.js, Express
-- **Database**: MongoDB
 - **Version Control**: Git, GitHub
 - **Deployment**: Vercel
 
 ## About Me
-I am a passionate software developer with experience in building web and mobile applications. I enjoy learning new technologies and applying them to solve real-world problems. In my free time, I like to contribute to open-source projects and write technical blogs.
+I am a passionate software developer with experience in building web and mobile applications. I enjoy learning new technologies and applying them to solve real-world problems. In my free time, I like to contribute to open-source projects.
 
 Feel free to explore my portfolio and reach out if you have any questions or opportunities to collaborate!
